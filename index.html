@@ -1,0 +1,222 @@
+<title>MBA Strategy — Course Roadmap</title>
+<style>
+  :root{
+    --bg:#F5F7F9; --surface:#FFFFFF; --surface-2:#FBFCFD;
+    --ink:#17222E; --muted:#5C6875; --faint:#8B95A0;
+    --line:#E3E7EC; --line-soft:#EDF0F4;
+    --m1:#2F6098; --m2:#2C8079; --m3:#6355A6; --apply:#B26A22;
+    --m1-tint:#EAF1F8; --m2-tint:#E6F2F0; --m3-tint:#EEEBF6; --apply-tint:#F6EEE3;
+    --shadow:0 1px 2px rgba(23,34,46,.04),0 8px 24px rgba(23,34,46,.06);
+    --serif:"Charter","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0D1319; --surface:#141D26; --surface-2:#111922;
+      --ink:#E9EEF3; --muted:#9AA6B2; --faint:#6E7A87;
+      --line:#25303B; --line-soft:#1D2732;
+      --m1:#5C97D0; --m2:#48B0A6; --m3:#9385D6; --apply:#D8944A;
+      --m1-tint:#16232F; --m2-tint:#14262A; --m3-tint:#1E1D30; --apply-tint:#241C12;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.34);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#F5F7F9; --surface:#FFFFFF; --surface-2:#FBFCFD;
+    --ink:#17222E; --muted:#5C6875; --faint:#8B95A0;
+    --line:#E3E7EC; --line-soft:#EDF0F4;
+    --m1:#2F6098; --m2:#2C8079; --m3:#6355A6; --apply:#B26A22;
+    --m1-tint:#EAF1F8; --m2-tint:#E6F2F0; --m3-tint:#EEEBF6; --apply-tint:#F6EEE3;
+    --shadow:0 1px 2px rgba(23,34,46,.04),0 8px 24px rgba(23,34,46,.06);
+  }
+  :root[data-theme="dark"]{
+    --bg:#0D1319; --surface:#141D26; --surface-2:#111922;
+    --ink:#E9EEF3; --muted:#9AA6B2; --faint:#6E7A87;
+    --line:#25303B; --line-soft:#1D2732;
+    --m1:#5C97D0; --m2:#48B0A6; --m3:#9385D6; --apply:#D8944A;
+    --m1-tint:#16232F; --m2-tint:#14262A; --m3-tint:#1E1D30; --apply-tint:#241C12;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.34);
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.55;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:940px;margin:0 auto;padding:clamp(28px,5vw,64px) clamp(18px,4vw,40px) 80px;}
+
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--faint);display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .eyebrow b{color:var(--m1);font-weight:600}
+  .thesis{font-family:var(--serif);font-weight:600;color:var(--ink);
+    font-size:clamp(28px,5.2vw,50px);line-height:1.08;letter-spacing:-.01em;
+    text-wrap:balance;margin:22px 0 0;max-width:19ch;}
+  .thesis em{font-style:italic;color:var(--m1);}
+  .lede{margin:20px 0 0;max-width:60ch;color:var(--muted);font-size:clamp(15px,1.7vw,17px);}
+  .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;color:var(--muted);
+    background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 11px;}
+
+  .rule{height:1px;background:var(--line);margin:48px 0 8px;border:0;}
+
+  .modules{display:flex;flex-direction:column;gap:20px;margin-top:36px;}
+  .mod{position:relative;background:var(--surface);border:1px solid var(--line);
+    border-radius:16px;box-shadow:var(--shadow);overflow:hidden;
+    display:grid;grid-template-columns:78px 1fr;}
+  .spine{background:var(--tint);border-right:1px solid var(--line-soft);
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+    padding:22px 0;gap:10px;}
+  .numeral{font-family:var(--serif);font-size:34px;font-weight:600;color:var(--hue);line-height:1;}
+  .spine .dot{width:9px;height:9px;border-radius:50%;background:var(--hue);}
+  .mbody{padding:22px 24px 24px;}
+  .mod-kicker{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--hue);font-weight:600;}
+  .mod-title{font-family:var(--serif);font-size:clamp(20px,2.6vw,25px);font-weight:600;
+    margin:6px 0 2px;letter-spacing:-.01em;text-wrap:balance;}
+  .mod-sessions{font-family:var(--mono);font-size:12px;color:var(--faint);margin-bottom:16px;}
+  .concepts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;}
+  .concepts li{position:relative;padding-left:18px;color:var(--ink);font-size:15px;}
+  .concepts li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;
+    border-radius:2px;background:var(--hue);transform:rotate(45deg);}
+  .concepts li b{font-weight:600;}
+  .concepts li span{color:var(--muted);}
+
+  .m1{--hue:var(--m1);--tint:var(--m1-tint);}
+  .m2{--hue:var(--m2);--tint:var(--m2-tint);}
+  .m3{--hue:var(--m3);--tint:var(--m3-tint);}
+
+  .apply{margin-top:22px;background:var(--apply-tint);border:1px solid var(--line);
+    border-radius:16px;padding:24px clamp(18px,3vw,28px);box-shadow:var(--shadow);
+    --hue:var(--apply);}
+  .apply-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+  .apply-kicker{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--apply);font-weight:600;}
+  .apply-title{font-family:var(--serif);font-size:clamp(19px,2.4vw,23px);font-weight:600;margin:0;}
+  .apply-sub{color:var(--muted);font-size:14.5px;margin:8px 0 20px;max-width:64ch;}
+  .sims{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;}
+  .sim{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:13px 14px;}
+  .sim .nm{font-family:var(--serif);font-weight:600;font-size:15.5px;}
+  .sim .fx{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.02em;margin-top:1px;}
+  .sim .cn{font-size:13px;color:var(--muted);margin-top:7px;line-height:1.4;}
+  .project{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:11px;
+    padding:15px 16px;display:flex;flex-direction:column;gap:10px;}
+  .project .pt{font-family:var(--serif);font-weight:600;font-size:15.5px;}
+  .flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
+  .flow .step{background:var(--apply-tint);border:1px solid var(--line-soft);border-radius:999px;
+    padding:4px 11px;color:var(--ink);font-family:var(--mono);font-size:11.5px;}
+  .flow .arw{color:var(--apply);font-weight:700;}
+
+  .foot{margin-top:40px;color:var(--faint);font-size:13px;font-family:var(--mono);
+    text-align:center;letter-spacing:.02em;}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+  @media (max-width:560px){
+    .mod{grid-template-columns:56px 1fr;}
+    .numeral{font-size:26px;}
+    .spine{padding:16px 0;}
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow"><b>MBA Strategy</b><span>Strategic Management · Fall 2026</span></div>
+    <h1 class="thesis">Why do some firms outperform others&nbsp;— and can that advantage <em>last?</em></h1>
+    <p class="lede">The whole course is one sustained answer to that question. Frameworks arrive
+      as competing explanations, tested against real cases, four individual simulations, and a
+      live client engagement — never as a checklist of tools.</p>
+    <div class="meta">
+      <span class="tag">2 credits · Express I</span>
+      <span class="tag">Mon / Wed · Aug 17 – Sep 30</span>
+      <span class="tag">Case-discussion led</span>
+      <span class="tag">First MBA strategy course</span>
+    </div>
+  </header>
+
+  <hr class="rule">
+
+  <section class="modules">
+    <article class="mod m1 reveal">
+      <div class="spine"><span class="numeral">I</span><span class="dot"></span></div>
+      <div class="mbody">
+        <div class="mod-kicker">Diagnosis</div>
+        <h2 class="mod-title">External Environment &amp; Value Capture</h2>
+        <div class="mod-sessions">Sessions 1–3</div>
+        <ul class="concepts">
+          <li><b>What strategy is (and isn't)</b> <span>— firm heterogeneity; sustainable advantage</span></li>
+          <li><b>Industry structure &amp; macro-environment</b> <span>— Five Forces, PESTEL — and their limits</span></li>
+          <li><b>Value creation vs. value capture</b> <span>— willingness-to-pay↔cost wedge, added value, positioning vs. cost</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="mod m2 reveal">
+      <div class="spine"><span class="numeral">II</span><span class="dot"></span></div>
+      <div class="mbody">
+        <div class="mod-kicker">Advantage</div>
+        <h2 class="mod-title">Advantage &amp; Firm Boundaries</h2>
+        <div class="mod-sessions">Sessions 5–7</div>
+        <ul class="concepts">
+          <li><b>Resources, capabilities &amp; dynamic capabilities</b> <span>— RBV/VRIO, isolating mechanisms, value chain</span></li>
+          <li><b>Firm boundaries</b> <span>— theory of the firm, make-vs-buy, vertical integration</span></li>
+          <li><b>Competitive dynamics</b> <span>— entry deterrence, rival response, co-opetition &amp; complementors</span></li>
+          <li><b>Platforms &amp; business models</b> <span>— network effects, business-model innovation, disruption</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="mod m3 reveal">
+      <div class="spine"><span class="numeral">III</span><span class="dot"></span></div>
+      <div class="mbody">
+        <div class="mod-kicker">Scope &amp; Context</div>
+        <h2 class="mod-title">Scope, Uncertainty &amp; the Broader Context</h2>
+        <div class="mod-sessions">Sessions 9–10</div>
+        <ul class="concepts">
+          <li><b>Corporate scope</b> <span>— diversification logic, parenting/corporate advantage, synergy</span></li>
+          <li><b>Strategy under uncertainty</b> <span>— real options, framing &amp; behavioral strategy</span></li>
+          <li><b>Global &amp; beyond-market</b> <span>— CAGE/distance, market entry; non-market/stakeholder; strategy as process</span></li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section class="apply reveal">
+    <div class="apply-head">
+      <span class="apply-kicker">Woven throughout</span>
+      <h2 class="apply-title">Application — learning by doing</h2>
+    </div>
+    <p class="apply-sub">Each module's concepts are rehearsed individually in a simulation and then
+      carried, all together, into a real client engagement.</p>
+    <div class="sims">
+      <div class="sim"><div class="nm">Coffee Shop</div><div class="fx">FO0004 · Sess. 2–3</div><div class="cn">Value creation &amp; capture</div></div>
+      <div class="sim"><div class="nm">CloudStrat</div><div class="fx">KE1167 · Sess. 5–7</div><div class="cn">Platforms, business models, disruption</div></div>
+      <div class="sim"><div class="nm">Viv8</div><div class="fx">LC0011 · Sess. 6–9</div><div class="cn">Strategy under uncertainty / scope</div></div>
+      <div class="sim"><div class="nm">Vinho Rio</div><div class="fx">LC0023 · Sess. 7–10</div><div class="cn">Global &amp; market entry</div></div>
+    </div>
+    <div class="project">
+      <div class="pt">Live Consulting Project — a real client, the full toolkit</div>
+      <div class="flow">
+        <span class="step">Form &amp; scope</span><span class="arw">→</span>
+        <span class="step">★ Client kickoff</span><span class="arw">→</span>
+        <span class="step">Collect &amp; analyze</span><span class="arw">→</span>
+        <span class="step">★ Mid-point</span><span class="arw">→</span>
+        <span class="step">Strategize</span><span class="arw">→</span>
+        <span class="step">◆ Final panel</span>
+      </div>
+    </div>
+  </section>
+
+  <p class="foot">Driving question · three modules · applied throughout — CofC MBA, Fall 2026</p>
+</div>
+
+<script>
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver'in window)||matchMedia('(prefers-reduced-motion:reduce)').matches){
+      els.forEach(function(e){e.classList.add('in');});return;
+    }
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});
+    },{threshold:.15});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
