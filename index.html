@@ -55,6 +55,11 @@
   .tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;color:var(--muted);
     background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 11px;}
 
+  .instructors{margin:22px 0 0;font-size:14px;color:var(--muted);}
+  .instructors b{color:var(--ink);font-weight:600;}
+  .instructors a{color:var(--m1);text-decoration:none;border-bottom:1px solid var(--line);}
+  .instructors a:hover,.instructors a:focus{border-bottom-color:var(--m1);}
+
   .rule{height:1px;background:var(--line);margin:48px 0 8px;border:0;}
 
   .modules{display:flex;flex-direction:column;gap:20px;margin-top:36px;}
@@ -96,6 +101,12 @@
   .sim .nm{font-family:var(--serif);font-weight:600;font-size:15.5px;}
   .sim .fx{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.02em;margin-top:1px;}
   .sim .cn{font-size:13px;color:var(--muted);margin-top:7px;line-height:1.4;}
+  .sim .ind{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:10px;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--apply);background:var(--apply-tint);
+    border:1px solid var(--line-soft);border-radius:5px;padding:2px 7px;line-height:1.35;}
+  .grid-label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);font-weight:600;margin:6px 0 11px;}
+  .cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:22px;}
   .project{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:11px;
     padding:15px 16px;display:flex;flex-direction:column;gap:10px;}
   .project .pt{font-family:var(--serif);font-weight:600;font-size:15.5px;}
@@ -119,7 +130,7 @@
 
 <div class="wrap">
   <header>
-    <div class="eyebrow"><b>MBA Strategy</b><span>Strategic Management · Fall 2026</span></div>
+    <div class="eyebrow"><b>MBA Strategy</b><span>MBAD 560-01 · Strategic Management · Fall 2026</span></div>
     <h1 class="thesis">Why do some firms outperform others&nbsp;— and can that advantage <em>last?</em></h1>
     <p class="lede">The whole course is one sustained answer to that question. Frameworks arrive
       as competing explanations, tested against real cases, four individual simulations, and a
@@ -130,6 +141,10 @@
       <span class="tag">Case-discussion led</span>
       <span class="tag">First MBA strategy course</span>
     </div>
+    <p class="instructors">Instructors&nbsp;&nbsp;·&nbsp;&nbsp;<b>Hadi Shaheen, PhD</b>
+      <a href="mailto:shaheenh@cofc.edu">shaheenh@cofc.edu</a>
+      &nbsp;·&nbsp; <b>Kamyar Goudarzi, PhD</b>
+      <a href="mailto:goudarzik@cofc.edu">goudarzik@cofc.edu</a></p>
   </header>
 
   <hr class="rule">
@@ -182,16 +197,28 @@
   <section class="apply reveal">
     <div class="apply-head">
       <span class="apply-kicker">Woven throughout</span>
-      <h2 class="apply-title">Application — learning by doing</h2>
+      <h2 class="apply-title">Application — real firms, real decisions</h2>
     </div>
-    <p class="apply-sub">Each module's concepts are rehearsed individually in a simulation and then
-      carried, all together, into a real client engagement.</p>
+    <p class="apply-sub">Every framework is stress-tested against real companies spanning very
+      different industries — a New Zealand dairy disruptor, the Big Tech AI arms race, an AI-native
+      software startup, a coffee chain, an enterprise cloud migration, a digital platform's next
+      bet, and a global wine house — then carried, all together, into a live client engagement.</p>
+
+    <div class="grid-label">Anchor cases — real firms under the microscope</div>
+    <div class="cases">
+      <div class="sim"><div class="nm">The a2 Milk Company</div><div class="fx">HBS · Sess. 1</div><div class="cn">What is strategy? why firms differ</div><span class="ind">Dairy &amp; Consumer Goods</span></div>
+      <div class="sim"><div class="nm">AI Wars</div><div class="fx">HBS · Sess. 2</div><div class="cn">Industry structure &amp; value capture</div><span class="ind">Big Tech · Generative AI</span></div>
+      <div class="sim"><div class="nm">Gamma</div><div class="fx">HBS · Sess. 5</div><div class="cn">Capabilities &amp; durable advantage</div><span class="ind">AI-Native Software Startup</span></div>
+    </div>
+
+    <div class="grid-label">Individual simulations — rehearse each module solo</div>
     <div class="sims">
-      <div class="sim"><div class="nm">Coffee Shop</div><div class="fx">FO0004 · Sess. 2–3</div><div class="cn">Value creation &amp; capture</div></div>
-      <div class="sim"><div class="nm">CloudStrat</div><div class="fx">KE1167 · Sess. 5–7</div><div class="cn">Platforms, business models, disruption</div></div>
-      <div class="sim"><div class="nm">Viv8</div><div class="fx">LC0011 · Sess. 6–9</div><div class="cn">Strategy under uncertainty / scope</div></div>
-      <div class="sim"><div class="nm">Vinho Rio</div><div class="fx">LC0023 · Sess. 7–10</div><div class="cn">Global &amp; market entry</div></div>
+      <div class="sim"><div class="nm">Coffee Shop</div><div class="fx">FO0004 · Sess. 2–3</div><div class="cn">Value creation &amp; capture</div><span class="ind">Food &amp; Beverage Retail</span></div>
+      <div class="sim"><div class="nm">CloudStrat</div><div class="fx">KE1167 · Sess. 5–7</div><div class="cn">Platforms, business models, disruption</div><span class="ind">Enterprise Cloud / SaaS</span></div>
+      <div class="sim"><div class="nm">Viv8</div><div class="fx">LC0011 · Sess. 6–9</div><div class="cn">Strategy under uncertainty / scope</div><span class="ind">Digital Platform · Marketplace vs. Metaverse</span></div>
+      <div class="sim"><div class="nm">Vinho Rio</div><div class="fx">LC0023 · Sess. 7–10</div><div class="cn">Global &amp; market entry</div><span class="ind">Global Wine &amp; Beverage</span></div>
     </div>
+
     <div class="project">
       <div class="pt">Live Consulting Project — a real client, the full toolkit</div>
       <div class="flow">
@@ -202,6 +229,7 @@
         <span class="step">Strategize</span><span class="arw">→</span>
         <span class="step">◆ Final panel</span>
       </div>
+      <div class="cn" style="color:var(--muted);font-size:13px;">Five real client companies across a range of industries — a strategic challenge per company, sourced by the MBA program.</div>
     </div>
   </section>
 
