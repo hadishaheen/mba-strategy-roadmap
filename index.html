@@ -127,7 +127,9 @@
   .cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:22px;}
   .project{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:11px;
     padding:15px 16px;display:flex;flex-direction:column;gap:10px;}
-  .project .pt{font-family:var(--serif);font-weight:600;font-size:15.5px;}
+  .project .pt{font-family:var(--serif);font-weight:600;font-size:16.5px;color:var(--brand);}
+  .project .pd{margin:2px 0 4px;font-size:14px;color:var(--muted);line-height:1.5;max-width:66ch;}
+  .project .pd b{color:var(--ink);font-weight:600;}
   .flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;color:var(--muted);}
   .flow .step{background:var(--apply-tint);border:1px solid var(--line-soft);border-radius:999px;
     padding:4px 11px;color:var(--ink);font-family:var(--mono);font-size:11.5px;}
@@ -243,7 +245,13 @@
     </div>
 
     <div class="project">
-      <div class="pt">Live Consulting Project — a real client, the full toolkit</div>
+      <div class="pt">The Capstone — a top-tier consulting engagement for a real local business</div>
+      <p class="pd">The centerpiece of the course. Working in teams, you take on a genuine strategic
+        challenge for a real Charleston-area company — the kind of engagement a top consulting firm
+        would run. You meet your client, diagnose the real problem, gather your own evidence,
+        and build a recommendation you can stand behind. It culminates in a professional
+        <b>consulting-style report</b> and a <b>final presentation to a panel of the client and
+        faculty</b> — real stakes, real audience, real impact.</p>
       <div class="flow">
         <span class="step">Form &amp; scope</span><span class="arw">→</span>
         <span class="step">★ Client kickoff</span><span class="arw">→</span>
@@ -252,7 +260,7 @@
         <span class="step">Strategize</span><span class="arw">→</span>
         <span class="step">◆ Final panel</span>
       </div>
-      <div class="cn" style="color:var(--muted);font-size:13px;">Five real client companies across a range of industries — a strategic challenge per company, sourced by the MBA program.</div>
+      <div class="cn" style="color:var(--muted);font-size:13px;">Five real local client companies across a range of industries — one live strategic challenge per company, sourced through the MBA program.</div>
     </div>
   </section>
 
