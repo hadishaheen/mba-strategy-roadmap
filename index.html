@@ -1,47 +1,65 @@
 <title>MBA Strategy — Course Roadmap</title>
 <style>
+  /* College of Charleston brand palette — Maroon #660000, Gold #bfa87c,
+     with approved accent hues (teal #2f9e91, muted purple #a29bba). */
   :root{
-    --bg:#F5F7F9; --surface:#FFFFFF; --surface-2:#FBFCFD;
-    --ink:#17222E; --muted:#5C6875; --faint:#8B95A0;
-    --line:#E3E7EC; --line-soft:#EDF0F4;
-    --m1:#2F6098; --m2:#2C8079; --m3:#6355A6; --apply:#B26A22;
-    --m1-tint:#EAF1F8; --m2-tint:#E6F2F0; --m3-tint:#EEEBF6; --apply-tint:#F6EEE3;
-    --shadow:0 1px 2px rgba(23,34,46,.04),0 8px 24px rgba(23,34,46,.06);
+    --bg:#F6F3F1; --surface:#FFFFFF; --surface-2:#FCFAF9;
+    --ink:#241417; --muted:#6A5D60; --faint:#9A8E90;
+    --line:#E7DFDD; --line-soft:#F0E9E7;
+    --brand:#660000; --gold:#8C7443;
+    --m1:#660000; --m2:#0E7C70; --m3:#5C5470; --apply:#B26A22;
+    --m1-tint:#F4EAE8; --m2-tint:#E4F1EF; --m3-tint:#ECEAF1; --apply-tint:#F7EEE0;
+    --shadow:0 1px 2px rgba(60,20,20,.05),0 8px 24px rgba(60,20,20,.07);
     --serif:"Charter","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
     --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     --mono:ui-monospace,"SF Mono","Cascadia Mono",Menlo,Consolas,monospace;
   }
   @media (prefers-color-scheme:dark){
     :root{
-      --bg:#0D1319; --surface:#141D26; --surface-2:#111922;
-      --ink:#E9EEF3; --muted:#9AA6B2; --faint:#6E7A87;
-      --line:#25303B; --line-soft:#1D2732;
-      --m1:#5C97D0; --m2:#48B0A6; --m3:#9385D6; --apply:#D8944A;
-      --m1-tint:#16232F; --m2-tint:#14262A; --m3-tint:#1E1D30; --apply-tint:#241C12;
-      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.34);
+      --bg:#140C0D; --surface:#1E1315; --surface-2:#190F11;
+      --ink:#F0E7E8; --muted:#B6A6A8; --faint:#827274;
+      --line:#332325; --line-soft:#271A1C;
+      --brand:#E39aa0; --gold:#CDB483;
+      --m1:#E39AA0; --m2:#48C4B6; --m3:#B0A6C6; --apply:#E0A44A;
+      --m1-tint:#2A181A; --m2-tint:#12262A; --m3-tint:#201D28; --apply-tint:#271D12;
+      --shadow:0 1px 2px rgba(0,0,0,.34),0 10px 28px rgba(0,0,0,.4);
     }
   }
   :root[data-theme="light"]{
-    --bg:#F5F7F9; --surface:#FFFFFF; --surface-2:#FBFCFD;
-    --ink:#17222E; --muted:#5C6875; --faint:#8B95A0;
-    --line:#E3E7EC; --line-soft:#EDF0F4;
-    --m1:#2F6098; --m2:#2C8079; --m3:#6355A6; --apply:#B26A22;
-    --m1-tint:#EAF1F8; --m2-tint:#E6F2F0; --m3-tint:#EEEBF6; --apply-tint:#F6EEE3;
-    --shadow:0 1px 2px rgba(23,34,46,.04),0 8px 24px rgba(23,34,46,.06);
+    --bg:#F6F3F1; --surface:#FFFFFF; --surface-2:#FCFAF9;
+    --ink:#241417; --muted:#6A5D60; --faint:#9A8E90;
+    --line:#E7DFDD; --line-soft:#F0E9E7;
+    --brand:#660000; --gold:#8C7443;
+    --m1:#660000; --m2:#0E7C70; --m3:#5C5470; --apply:#B26A22;
+    --m1-tint:#F4EAE8; --m2-tint:#E4F1EF; --m3-tint:#ECEAF1; --apply-tint:#F7EEE0;
+    --shadow:0 1px 2px rgba(60,20,20,.05),0 8px 24px rgba(60,20,20,.07);
   }
   :root[data-theme="dark"]{
-    --bg:#0D1319; --surface:#141D26; --surface-2:#111922;
-    --ink:#E9EEF3; --muted:#9AA6B2; --faint:#6E7A87;
-    --line:#25303B; --line-soft:#1D2732;
-    --m1:#5C97D0; --m2:#48B0A6; --m3:#9385D6; --apply:#D8944A;
-    --m1-tint:#16232F; --m2-tint:#14262A; --m3-tint:#1E1D30; --apply-tint:#241C12;
-    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.34);
+    --bg:#140C0D; --surface:#1E1315; --surface-2:#190F11;
+    --ink:#F0E7E8; --muted:#B6A6A8; --faint:#827274;
+    --line:#332325; --line-soft:#271A1C;
+    --brand:#E39aa0; --gold:#CDB483;
+    --m1:#E39AA0; --m2:#48C4B6; --m3:#B0A6C6; --apply:#E0A44A;
+    --m1-tint:#2A181A; --m2-tint:#12262A; --m3-tint:#201D28; --apply-tint:#271D12;
+    --shadow:0 1px 2px rgba(0,0,0,.34),0 10px 28px rgba(0,0,0,.4);
   }
 
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
     line-height:1.55;-webkit-font-smoothing:antialiased;}
   .wrap{max-width:940px;margin:0 auto;padding:clamp(28px,5vw,64px) clamp(18px,4vw,40px) 80px;}
+
+  .brandbar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:30px;}
+  .brandbar .logo{height:50px;width:auto;}
+  .logo-dark{display:none;}
+  @media (prefers-color-scheme:dark){.logo-light{display:none;}.logo-dark{display:block;}}
+  :root[data-theme="light"] .logo-light{display:block;} :root[data-theme="light"] .logo-dark{display:none;}
+  :root[data-theme="dark"] .logo-light{display:none;} :root[data-theme="dark"] .logo-dark{display:block;}
+  .unit-sig{display:flex;flex-direction:column;border-left:2px solid var(--gold);
+    padding-left:15px;line-height:1.12;}
+  .unit-sig .u1{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--brand);}
+  .unit-sig .u2{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--muted);margin-top:4px;}
 
   .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
     color:var(--faint);display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
@@ -130,6 +148,11 @@
 
 <div class="wrap">
   <header>
+    <div class="brandbar">
+      <img class="logo logo-light" src="cofc-logo-light.png" alt="College of Charleston">
+      <img class="logo logo-dark" src="cofc-logo-dark.png" alt="College of Charleston">
+      <span class="unit-sig"><span class="u1">School of Business</span><span class="u2">Graduate Programs · MBA</span></span>
+    </div>
     <div class="eyebrow"><b>MBA Strategy</b><span>MBAD 560-01 · Strategic Management · Fall 2026</span></div>
     <h1 class="thesis">Why do some firms outperform others&nbsp;— and can that advantage <em>last?</em></h1>
     <p class="lede">The whole course is one sustained answer to that question. Frameworks arrive
@@ -233,7 +256,7 @@
     </div>
   </section>
 
-  <p class="foot">Driving question · three modules · applied throughout — CofC MBA, Fall 2026</p>
+  <p class="foot">College of Charleston · School of Business — MBA Strategy (MBAD 560-01) · Fall 2026</p>
 </div>
 
 <script>
